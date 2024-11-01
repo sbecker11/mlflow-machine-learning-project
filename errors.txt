@@ -1,0 +1,41 @@
+2024/10/31 17:38:23 INFO mlflow.utils.virtualenv: Installing python 3.11.10 if it does not exist
+Traceback (most recent call last):
+  File "/Users/sbecker11/workspace-mlops/mlflow-machine-learning-project/venv/bin/mlflow", line 8, in <module>
+    sys.exit(cli())
+             ^^^^^
+  File "/Users/sbecker11/workspace-mlops/mlflow-machine-learning-project/venv/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sbecker11/workspace-mlops/mlflow-machine-learning-project/venv/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/sbecker11/workspace-mlops/mlflow-machine-learning-project/venv/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sbecker11/workspace-mlops/mlflow-machine-learning-project/venv/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sbecker11/workspace-mlops/mlflow-machine-learning-project/venv/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sbecker11/workspace-mlops/mlflow-machine-learning-project/venv/lib/python3.11/site-packages/mlflow/cli.py", line 204, in run
+    projects.run(
+  File "/Users/sbecker11/workspace-mlops/mlflow-machine-learning-project/venv/lib/python3.11/site-packages/mlflow/projects/__init__.py", line 357, in run
+    submitted_run_obj = _run(
+                        ^^^^^
+  File "/Users/sbecker11/workspace-mlops/mlflow-machine-learning-project/venv/lib/python3.11/site-packages/mlflow/projects/__init__.py", line 110, in _run
+    submitted_run = backend.run(
+                    ^^^^^^^^^^^^
+  File "/Users/sbecker11/workspace-mlops/mlflow-machine-learning-project/venv/lib/python3.11/site-packages/mlflow/projects/backend/local.py", line 161, in run
+    python_bin_path = _install_python(python_env.python, pyenv_root=pyenv_root)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sbecker11/workspace-mlops/mlflow-machine-learning-project/venv/lib/python3.11/site-packages/mlflow/utils/virtualenv.py", line 137, in _install_python
+    _exec_cmd(
+  File "/Users/sbecker11/workspace-mlops/mlflow-machine-learning-project/venv/lib/python3.11/site-packages/mlflow/utils/process.py", line 119, in _exec_cmd
+    process = subprocess.Popen(
+              ^^^^^^^^^^^^^^^^^
+  File "/usr/local/Cellar/python@3.11/3.11.10/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/local/Cellar/python@3.11/3.11.10/Frameworks/Python.framework/Versions/3.11/lib/python3.11/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'None'

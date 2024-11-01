@@ -1,0 +1,9 @@
+name: MLflow Example
+
+requirements: requirements.txt
+
+entry_points:
+  main:
+    parameters:
+      param1: {type: float, default: 0.5}
+    command: "python main.py {param1}"

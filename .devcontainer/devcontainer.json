@@ -1,0 +1,15 @@
+{
+    "name": "MLFlow Development",
+    "image": "python:3.9-slim",
+    "settings": {
+        "python.defaultInterpreterPath": ".venv/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true
+    },
+    "extensions": [
+        "ms-python.python",
+        "GitHub.vscode-pull-request-github"
+    ],
+    "postCreateCommand": "python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt",
+    "forwardPorts": [5000]  // If MLFlow UI is used, adjust based on your setup
+}

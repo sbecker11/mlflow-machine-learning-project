@@ -1,0 +1,31 @@
+# Use an official Python runtime as the base image
+FROM python:3.9-slim
+
+# Install system tools required for development
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the working directory in the container
+WORKDIR /workspace
+
+# Create and use Python virtual environment
+RUN python -m venv .venv
+ENV PATH="/workspace/.venv/bin:$PATH"
+
+# Install any needed packages specified in requirements.txt
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the project files into the container
+COPY . .
+
+# Run a script to install additional tools or set up the environment
+# This step is optional and depends on your project needs
+# RUN your-setup-script.sh
+
+# Expose any ports needed
+# EXPOSE 5000
+
+# Set the default command to start Python shell
+CMD ["python"]
